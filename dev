@@ -1,0 +1,16 @@
+control ansible_connection=local 
+app01 ansible_connection=ssh ansible_user=app01 ansible_host=app01
+app02 ansible_connection=ssh ansible_user=app01 ansible_host=app02
+lb01 ansible_connection=ssh ansible_user=app01 ansible_host=lb01 
+db01 ansible_connection=ssh ansible_user=app01 ansible_host=db01 
+
+[loadbalancer]
+lb01
+
+[webserver]
+app01
+app02
+
+[database]
+db01
+
